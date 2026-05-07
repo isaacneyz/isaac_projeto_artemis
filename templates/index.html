@@ -18,7 +18,7 @@
 <header class="navbar">
 
     <div class="logo">
-        <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/artemis_logo.png" alt="Logo Artemis">
+        <img src="{{ url_for('static', filename='images/artemis_logo.png') }}">
         <span>NASA Artemis Control</span>
     </div>
 
@@ -38,13 +38,16 @@
 <section class="hero">
 
     <img class="hero-image"
-    src="https://images.unsplash.com/photo-1580428180114-4a5b3a6f3a5f?q=80&w=2000&auto=format&fit=crop" alt="Espaço profundo">
+    src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2000&auto=format&fit=crop">
 
     <div class="hero-overlay"></div>
 
     <div class="hero-text">
+
         <h1>Missão Artemis II</h1>
+
         <p>O retorno da humanidade à órbita lunar e o início da exploração profunda do espaço.</p>
+
     </div>
 
 </section>
@@ -67,16 +70,6 @@
         O objetivo final é preparar futuras missões para Marte e expandir o alcance humano no sistema solar.
     </p>
 
-    <p class="text">
-        Além da exploração científica, o programa Artemis busca inspirar novas gerações de engenheiros, cientistas e exploradores,
-        reforçando o papel da NASA como líder mundial em inovação espacial.
-    </p>
-
-    <p class="text">
-        A cooperação internacional é um dos pilares do Artemis, envolvendo agências espaciais parceiras como a ESA,
-        a CSA e a JAXA.
-    </p>
-
 </section>
 
 <!-- TRIPULAÇÃO -->
@@ -84,15 +77,33 @@
 
     <h2>Tripulação Artemis II</h2>
 
-    <div class="crew-photo">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Artemis_2_Crew_Portrait.jpg" 
-             alt="Tripulação Artemis II - Reid Wiseman, Victor Glover, Christina Koch e Jeremy Hansen">
-    </div>
+    <div class="grid">
 
-    <p class="text">
-        A missão Artemis II contará com quatro astronautas: Reid Wiseman (Comandante), Victor Glover (Piloto),
-        Christina Koch (Especialista em Missão) e Jeremy Hansen (Agência Espacial Canadense).
-    </p>
+        <div class="card astronauta">
+            <img src="https://www.nasa.gov/wp-content/uploads/2023/04/reid-wiseman.jpg">
+            <h3>Reid Wiseman</h3>
+            <p>Comandante da missão Artemis II.</p>
+        </div>
+
+        <div class="card astronauta">
+            <img src="https://www.nasa.gov/wp-content/uploads/2023/04/victor-glover.jpg">
+            <h3>Victor Glover</h3>
+            <p>Piloto da missão e especialista orbital.</p>
+        </div>
+
+        <div class="card astronauta">
+            <img src="https://www.nasa.gov/wp-content/uploads/2023/04/christina-koch.jpg">
+            <h3>Christina Koch</h3>
+            <p>Responsável por experimentos científicos no espaço.</p>
+        </div>
+
+        <div class="card astronauta">
+            <img src="https://www.nasa.gov/wp-content/uploads/2023/04/jeremy-hansen.jpg">
+            <h3>Jeremy Hansen</h3>
+            <p>Agência Espacial Canadense.</p>
+        </div>
+
+    </div>
 
 </section>
 
@@ -117,25 +128,20 @@
     <h2>Exploração da Lua</h2>
 
     <div class="gallery">
+
         <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop" alt="Superfície lunar">
+            <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=1600&auto=format&fit=crop">
         </div>
+
         <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1523983302133-1e1c7a6e681d?q=80&w=1600&auto=format&fit=crop" alt="Astronauta na Lua">
+            <img src="https://images.unsplash.com/photo-1447433819943-74a20887a3f8?q=80&w=1600&auto=format&fit=crop">
         </div>
+
         <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?q=80&w=1600&auto=format&fit=crop" alt="Paisagem lunar">
+            <img src="https://images.unsplash.com/photo-1454789548928-9efd52dc4031?q=80&w=1600&auto=format&fit=crop">
         </div>
+
     </div>
-
-    <p class="text">
-        A Lua é o corpo celeste mais próximo da Terra e serve como laboratório natural para estudos científicos.
-    </p>
-
-    <p class="text">
-        As missões Artemis pretendem estabelecer uma presença sustentável, permitindo pesquisas sobre recursos lunares
-        e servindo como base para futuras viagens a Marte.
-    </p>
 
 </section>
 
@@ -145,21 +151,20 @@
     <h2>Exploração de Marte</h2>
 
     <div class="gallery">
-        <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?q=80&w=1600&auto=format&fit=crop" alt="Superfície marciana">
-        </div>
-        <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1580428180114-4a5b3a6f3a5f?q=80&w=1600&auto=format&fit=crop" alt="Paisagem de Marte">
-        </div>
-        <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1636819488524-1c7a0f6c4a9c?q=80&w=1600&auto=format&fit=crop" alt="Marte visto do espaço">
-        </div>
-    </div>
 
-    <p class="text">
-        Marte é considerado o próximo grande passo da exploração espacial. O planeta vermelho guarda segredos sobre
-        a possibilidade de vida fora da Terra e sobre a evolução dos planetas rochosos.
-    </p>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?q=80&w=1600&auto=format&fit=crop">
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1580428180114-4a5b3a6f3a5f?q=80&w=1600&auto=format&fit=crop">
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1636819488524-1c7a0f6c4a9c?q=80&w=1600&auto=format&fit=crop">
+        </div>
+
+    </div>
 
 </section>
 
@@ -169,15 +174,19 @@
     <h2>O Universo</h2>
 
     <div class="gallery">
+
         <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=1600&auto=format&fit=crop" alt="Galáxia distante">
+            <img src="https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=1600&auto=format&fit=crop">
         </div>
+
         <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=80&w=1600&auto=format&fit=crop" alt="Via Láctea">
+            <img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=80&w=1600&auto=format&fit=crop">
         </div>
+
         <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1462332420958-a05d1e002413?q=80&w=1600&auto=format&fit=crop" alt="Nebulosa colorida">
+            <img src="https://images.unsplash.com/photo-1462332420958-a05d1e002413?q=80&w=1600&auto=format&fit=crop">
         </div>
+
     </div>
 
 </section>
@@ -188,15 +197,19 @@
     <h2>Galeria Espacial NASA</h2>
 
     <div class="gallery">
+
         <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop" alt="Terra vista do espaço">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop">
         </div>
+
         <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1600&auto=format&fit=crop" alt="Nebulosa azul">
+            <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1600&auto=format&fit=crop">
         </div>
+
         <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=1600&auto=format&fit=crop" alt="Espaço profundo">
+            <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=1600&auto=format&fit=crop">
         </div>
+
     </div>
 
 </section>
