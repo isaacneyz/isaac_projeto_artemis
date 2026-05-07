@@ -8,15 +8,13 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.min.js"></script>
 </head>
 
 <body>
 
 <div id="space3d"></div>
 
+<!-- NAVBAR -->
 <header class="navbar">
 
     <div class="logo">
@@ -27,8 +25,10 @@
     <nav>
         <a href="#sobre">Missão</a>
         <a href="#tripulacao">Tripulação</a>
+        <a href="#astronomia">Astronomia</a>
+        <a href="#lua">Lua</a>
+        <a href="#universo">Universo</a>
         <a href="#galeria">Galeria</a>
-        <a href="#dashboard">Controle</a>
     </nav>
 
 </header>
@@ -45,20 +45,25 @@
 
         <h1>Retorno à Lua</h1>
 
-        <p>Programa Artemis — exploração espacial de nova geração</p>
+        <p>Programa Artemis — exploração espacial da nova era humana</p>
 
     </div>
 
 </section>
 
-<!-- SOBRE -->
+<!-- MISSÃO -->
 <section id="sobre" class="section">
 
-    <h2>Programa Artemis</h2>
+    <h2>Missão Artemis II</h2>
 
     <p class="text">
-        O programa Artemis representa o retorno da humanidade à Lua com tecnologia avançada,
-        explorando novos sistemas de habitação e viagens interplanetárias.
+        A Artemis II será o primeiro voo tripulado do programa Artemis,
+        levando humanos novamente à órbita lunar após mais de 50 anos.
+    </p>
+
+    <p class="text">
+        A missão irá testar sistemas críticos da nave Orion em ambiente de espaço profundo,
+        preparando futuras missões de pouso na superfície lunar.
     </p>
 
 </section>
@@ -71,25 +76,25 @@
     <div class="grid">
 
         <div class="card astronauta">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Reid_Wiseman_2014.jpg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Reid_Wiseman_2014.jpg/600px-Reid_Wiseman_2014.jpg">
             <h3>Reid Wiseman</h3>
             <p>Comandante da missão Artemis II.</p>
         </div>
 
         <div class="card astronauta">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Victor_Glover.jpg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Victor_Glover.jpg/600px-Victor_Glover.jpg">
             <h3>Victor Glover</h3>
             <p>Piloto da missão e especialista orbital.</p>
         </div>
 
         <div class="card astronauta">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Christina_Hammock_Koch.jpg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Christina_Hammock_Koch.jpg/600px-Christina_Hammock_Koch.jpg">
             <h3>Christina Koch</h3>
             <p>Responsável por experimentos científicos.</p>
         </div>
 
         <div class="card astronauta">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Jeremy_Hansen.jpg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Jeremy_Hansen.jpg/600px-Jeremy_Hansen.jpg">
             <h3>Jeremy Hansen</h3>
             <p>Agência Espacial Canadense.</p>
         </div>
@@ -98,7 +103,69 @@
 
 </section>
 
-<!-- GALERIA -->
+<!-- ASTRONOMIA -->
+<section id="astronomia" class="section">
+
+    <h2>Astronomia e Exploração Espacial</h2>
+
+    <p class="text">
+        A astronomia moderna estuda o universo usando telescópios como o James Webb,
+        que observa galáxias formadas há bilhões de anos.
+    </p>
+
+    <p class="text">
+        A Artemis ajuda a entender radiação cósmica, gravidade lunar e os efeitos do espaço profundo no corpo humano.
+    </p>
+
+</section>
+
+<!-- 🌕 LUA -->
+<section id="lua" class="section">
+
+    <h2>Exploração da Lua</h2>
+
+    <div class="gallery">
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=1600&auto=format&fit=crop">
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1447433819943-74a20887a3f8?q=80&w=1600&auto=format&fit=crop">
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1454789548928-9efd52dc4031?q=80&w=1600&auto=format&fit=crop">
+        </div>
+
+    </div>
+
+</section>
+
+<!-- 🌌 UNIVERSO -->
+<section id="universo" class="section">
+
+    <h2>O Universo</h2>
+
+    <div class="gallery">
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=1600&auto=format&fit=crop">
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=80&w=1600&auto=format&fit=crop">
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1462332420958-a05d1e002413?q=80&w=1600&auto=format&fit=crop">
+        </div>
+
+    </div>
+
+</section>
+
+<!-- GALERIA ORIGINAL -->
 <section id="galeria" class="section">
 
     <h2>Galeria Espacial</h2>
@@ -121,105 +188,9 @@
 
 </section>
 
-<!-- DASHBOARD -->
-<section id="dashboard" class="section">
-
-    <h2>Centro de Controle</h2>
-
-    <div class="grid">
-
-        <div class="card">
-            <h3>Status</h3>
-            <p id="status">Inicializando...</p>
-        </div>
-
-        <div class="card">
-            <h3>Velocidade</h3>
-            <p id="speed">0 km/h</p>
-        </div>
-
-        <div class="card">
-            <h3>Distância Lunar</h3>
-            <p id="distance">384.000 km</p>
-        </div>
-
-    </div>
-
-</section>
-
 <footer>
-NASA Artemis Program
+NASA Artemis Program • Exploração Lunar e Espacial
 </footer>
-
-<script>
-
-function updateData(){
-
-const status = [
-"Órbita Estável",
-"Sistemas Operacionais",
-"Inserção Lunar",
-"Comunicação Estável"
-];
-
-document.getElementById("status").innerText =
-status[Math.floor(Math.random()*status.length)];
-
-document.getElementById("speed").innerText =
-(38000 + Math.random()*800).toFixed(0) + " km/h";
-
-document.getElementById("distance").innerText =
-(384000 - Math.random()*4000).toFixed(0) + " km";
-
-}
-
-setInterval(updateData,2000);
-
-const scene = new THREE.Scene();
-
-const camera = new THREE.PerspectiveCamera(
-75,
-window.innerWidth/window.innerHeight,
-0.1,
-1000
-);
-
-const renderer = new THREE.WebGLRenderer({alpha:true});
-
-renderer.setSize(window.innerWidth,window.innerHeight);
-
-document.getElementById("space3d").appendChild(renderer.domElement);
-
-const geometry = new THREE.BufferGeometry();
-
-let vertices = [];
-
-for(let i=0;i<3000;i++){
-    vertices.push((Math.random()-0.5)*2000);
-    vertices.push((Math.random()-0.5)*2000);
-    vertices.push((Math.random()-0.5)*2000);
-}
-
-geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices,3));
-
-const stars = new THREE.Points(
-    geometry,
-    new THREE.PointsMaterial({color:0xffffff,size:1})
-);
-
-scene.add(stars);
-
-camera.position.z = 5;
-
-function animate(){
-    requestAnimationFrame(animate);
-    stars.rotation.y += 0.0003;
-    renderer.render(scene,camera);
-}
-
-animate();
-
-</script>
 
 </body>
 </html>
