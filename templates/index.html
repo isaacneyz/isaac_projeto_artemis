@@ -1,284 +1,140 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Artemis Mission Control</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artemis Mission | NASA</title>
 
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<script src="https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- 🌌 SPACE 3D -->
-<div id="space3d"></div>
-<canvas id="space"></canvas>
-
-<!-- NAVBAR -->
 <header class="navbar">
     <div class="logo">
         <img src="{{ url_for('static', filename='images/artemis_logo.png') }}">
-        <span>Artemis Control</span>
+        <span>Artemis Mission</span>
     </div>
+
     <nav>
         <a href="#overview">Overview</a>
+        <a href="#objectives">Objectives</a>
         <a href="#crew">Crew</a>
-        <a href="#dashboard">Dashboard</a>
-        <a href="#telemetry">Telemetry</a>
+        <a href="#timeline">Timeline</a>
     </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
     <div class="hero-overlay"></div>
+
     <div class="hero-text">
         <h1>Return to the Moon</h1>
-        <p>NASA Artemis Program — Full Mission Simulation System</p>
+        <p>
+            Artemis is NASA’s next step in human space exploration.  
+            We are going further than ever before — to stay.
+        </p>
     </div>
 </section>
 
 <!-- OVERVIEW -->
 <section id="overview" class="section">
     <h2>Mission Overview</h2>
+
     <p class="text">
-        Artemis establishes sustainable lunar exploration and prepares humanity for Mars.
+        The Artemis program aims to establish a sustainable human presence on the Moon by the end of the decade.  
+        Unlike the Apollo missions, Artemis is not just about landing — it is about building a long-term foundation for deep space exploration.
     </p>
+
+    <p class="text">
+        Through advanced spacecraft, international collaboration, and new lunar technologies, NASA will prepare humanity for future missions to Mars.
+    </p>
+</section>
+
+<!-- OBJECTIVES -->
+<section id="objectives" class="section">
+    <h2>Core Objectives</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Lunar Sustainability</h3>
+            <p>Develop systems to maintain human life on the Moon for extended periods.</p>
+        </div>
+
+        <div class="card">
+            <h3>Gateway Station</h3>
+            <p>Build a lunar orbital outpost to support missions deeper into space.</p>
+        </div>
+
+        <div class="card">
+            <h3>Mars Preparation</h3>
+            <p>Test technologies and systems required for future Mars exploration.</p>
+        </div>
+    </div>
 </section>
 
 <!-- CREW -->
 <section id="crew" class="section">
-    <h2>Crew</h2>
+    <h2>Artemis II Crew</h2>
+
+    <p class="text">
+        Artemis II will be the first crewed mission of the program, sending astronauts around the Moon in preparation for future landings.
+    </p>
+
     <div class="grid">
-        <div class="card">Reid Wiseman</div>
-        <div class="card">Victor Glover</div>
-        <div class="card">Christina Koch</div>
-        <div class="card">Jeremy Hansen</div>
+        <div class="card">
+            <h3>Reid Wiseman</h3>
+            <p>Commander of the mission.</p>
+        </div>
+
+        <div class="card">
+            <h3>Victor Glover</h3>
+            <p>Pilot and systems specialist.</p>
+        </div>
+
+        <div class="card">
+            <h3>Christina Koch</h3>
+            <p>Mission specialist and research lead.</p>
+        </div>
+
+        <div class="card">
+            <h3>Jeremy Hansen</h3>
+            <p>Canadian Space Agency astronaut.</p>
+        </div>
     </div>
 </section>
 
-<!-- DASHBOARD (NÍVEL 4) -->
-<section id="dashboard" class="section">
-<h2>Mission Dashboard</h2>
+<!-- TIMELINE -->
+<section id="timeline" class="section">
+    <h2>Mission Timeline</h2>
 
-<div class="grid">
-
-<div class="card">
-<h3>Status</h3>
-<p id="status">Loading...</p>
-</div>
-
-<div class="card">
-<h3>Distance Moon</h3>
-<p id="distance">384,000 km</p>
-</div>
-
-<div class="card">
-<h3>Fuel</h3>
-<div class="bar"><div id="fuel"></div></div>
-</div>
-
-<div class="card">
-<h3>Speed</h3>
-<p id="speed">0 km/h</p>
-</div>
-
-</div>
-</section>
-
-<!-- TELEMETRY (NÍVEL 5) -->
-<section id="telemetry" class="section">
-<h2>Telemetry</h2>
-
-<div class="grid">
-
-<div class="card">
-<canvas id="velocityChart"></canvas>
-</div>
-
-<div class="card">
-<canvas id="radar"></canvas>
-</div>
-
-<div class="card">
-<h3>Mission Log</h3>
-<div id="log"></div>
-</div>
-
-</div>
-</section>
-
-<!-- AI (NÍVEL 6) -->
-<section class="section">
-<h2>Mission AI</h2>
-<div class="card ai-box">
-<p id="ai">Initializing AI...</p>
-</div>
+    <div class="card">
+        <p><strong>2022</strong> — Artemis I: Uncrewed lunar orbit test</p>
+        <p><strong>2026</strong> — Artemis II: First crewed lunar flyby</p>
+        <p><strong>2027+</strong> — Artemis III: Lunar surface return</p>
+    </div>
 </section>
 
 <footer>
-Artemis Mission Control — NASA Simulation System
+    NASA Artemis Program — Exploring the Future of Humanity Beyond Earth
 </footer>
 
-<!-- ================= JS SYSTEM ================= -->
-
 <script>
-/* ================= NÍVEL 3: ESTRELAS ================= */
-const canvas = document.getElementById("space");
-const ctx = canvas.getContext("2d");
+const items = document.querySelectorAll(".section, .card, .text");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let stars = [];
-
-for (let i=0;i<200;i++){
-stars.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-r:Math.random()*1.5,
-s:Math.random()*0.5
-});
-}
-
-function starLoop(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
-ctx.fillStyle="#fff";
-
-stars.forEach(s=>{
-ctx.beginPath();
-ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-ctx.fill();
-s.y+=s.s;
-if(s.y>canvas.height){s.y=0}
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
 });
 
-requestAnimationFrame(starLoop);
-}
-starLoop();
-
-/* ================= NÍVEL 4: DASHBOARD ================= */
-
-function updateData(){
-const status=["Nominal","Stable","Orbiting","Burn Active"];
-document.getElementById("status").innerText =
-status[Math.floor(Math.random()*status.length)];
-
-document.getElementById("distance").innerText =
-(384000 - Math.random()*1000).toFixed(0)+" km";
-
-document.getElementById("speed").innerText =
-(38000 + Math.random()*500).toFixed(0)+" km/h";
-
-document.getElementById("fuel").style.width =
-(60+Math.random()*30)+"%";
-}
-setInterval(updateData,2000);
-updateData();
-
-/* ================= NÍVEL 5: LOG ================= */
-
-const log=document.getElementById("log");
-const msgs=[
-"System nominal",
-"Trajectory locked",
-"Lunar orbit stable",
-"Radiation within limits",
-"Communication secure"
-];
-
-setInterval(()=>{
-const div=document.createElement("div");
-div.innerText="["+new Date().toLocaleTimeString()+"] "+msgs[Math.floor(Math.random()*msgs.length)];
-log.prepend(div);
-if(log.children.length>6)log.removeChild(log.lastChild);
-},2500);
-
-/* ================= NÍVEL 5: CHART ================= */
-
-const ctx2=document.getElementById("velocityChart");
-
-new Chart(ctx2,{
-type:"line",
-data:{
-labels:["T1","T2","T3","T4","T5"],
-datasets:[{
-label:"Velocity",
-data:[30000,32000,34000,36000,38000],
-borderColor:"#3d6cff"
-}]
-}
+items.forEach(el => {
+    el.classList.add("hidden");
+    observer.observe(el);
 });
-
-/* ================= RADAR ================= */
-
-const radar=document.getElementById("radar");
-const r=radar.getContext("2d");
-radar.width=200;radar.height=200;
-let a=0;
-
-function radarLoop(){
-r.clearRect(0,0,200,200);
-r.beginPath();
-r.arc(100,100,80,0,Math.PI*2);
-r.strokeStyle="#3d6cff";
-r.stroke();
-
-r.beginPath();
-r.moveTo(100,100);
-r.lineTo(100+Math.cos(a)*80,100+Math.sin(a)*80);
-r.stroke();
-
-a+=0.05;
-requestAnimationFrame(radarLoop);
-}
-radarLoop();
-
-/* ================= NÍVEL 6: AI ================= */
-
-const ai=[
-"All systems stable. Preparing lunar approach.",
-"Trajectory confirmed. No anomalies detected.",
-"Crew vitals nominal. Mission continues.",
-"Entering lunar orbit insertion phase."
-];
-
-setInterval(()=>{
-document.getElementById("ai").innerText=
-ai[Math.floor(Math.random()*ai.length)];
-},3000);
-
-/* ================= THREE.JS SPACE ================= */
-
-const scene=new THREE.Scene();
-const camera=new THREE.PerspectiveCamera(75,innerWidth/innerHeight,0.1,1000);
-const renderer=new THREE.WebGLRenderer({alpha:true});
-renderer.setSize(innerWidth,innerHeight);
-document.getElementById("space3d").appendChild(renderer.domElement);
-
-const geo=new THREE.BufferGeometry();
-let pos=[];
-for(let i=0;i<1500;i++){
-pos.push((Math.random()-0.5)*2000);
-pos.push((Math.random()-0.5)*2000);
-pos.push((Math.random()-0.5)*2000);
-}
-geo.setAttribute("position",new THREE.Float32BufferAttribute(pos,3));
-
-const mat=new THREE.PointsMaterial({color:0xffffff,size:1});
-const stars3d=new THREE.Points(geo,mat);
-scene.add(stars3d);
-
-camera.position.z=5;
-
-function animate(){
-requestAnimationFrame(animate);
-stars3d.rotation.y+=0.0005;
-renderer.render(scene,camera);
-}
-animate();
 </script>
 
 </body>
