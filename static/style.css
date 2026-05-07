@@ -1,159 +1,89 @@
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:Inter;
+background:#05070f;
+color:#eaf0ff;
+overflow-x:hidden;
 }
 
-body {
-    font-family: "Inter", sans-serif;
-    background: radial-gradient(circle at top, #0b1020, #05070f);
-    color: #eaf0ff;
-    overflow-x: hidden;
+#space3d{
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+z-index:-2;
 }
 
-/* NAVBAR GLASS */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 16px 50px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    background: rgba(10, 15, 30, 0.6);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    z-index: 1000;
+#space{
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+z-index:-1;
 }
 
-.navbar .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+/* NAV */
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+padding:15px 40px;
+display:flex;
+justify-content:space-between;
+background:rgba(10,15,30,.6);
+backdrop-filter:blur(12px);
+z-index:1000;
 }
 
-.navbar img {
-    height: 30px;
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+align-items:flex-end;
+padding:60px;
+position:relative;
 }
 
-.navbar a {
-    color: #cfe3ff;
-    margin-left: 20px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.navbar a:hover {
-    color: #6ea8ff;
-}
-
-/* HERO CINEMATOGRÁFICO */
-.hero {
-    height: 100vh;
-    background: url("/static/images/0403_artemis.png") center/cover no-repeat;
-    display: flex;
-    align-items: flex-end;
-    position: relative;
-}
-
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, #05070f 20%, transparent);
-}
-
-.hero-text {
-    position: relative;
-    padding: 60px;
-    max-width: 650px;
-}
-
-.hero-text h1 {
-    font-size: 3.2rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.hero-text p {
-    opacity: 0.85;
-    line-height: 1.6;
-}
+.hero-text h1{font-size:3rem}
 
 /* SECTIONS */
-.section {
-    padding: 120px 10%;
-}
+.section{padding:120px 10%}
 
-.section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-}
-
-/* TEXTO ESTILO RELATÓRIO NASA */
-.text {
-    max-width: 800px;
-    line-height: 1.7;
-    opacity: 0.85;
-    margin-bottom: 20px;
-}
-
-/* CARDS GLASS */
-.card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
-    backdrop-filter: blur(12px);
-
-    padding: 20px;
-    border-radius: 16px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(110,168,255,0.6);
+/* CARDS */
+.card{
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.12);
+padding:20px;
+border-radius:16px;
+backdrop-filter:blur(10px);
 }
 
 /* GRID */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
 }
+
+/* BAR */
+.bar{
+height:10px;
+background:#222;
+border-radius:10px;
+overflow:hidden;
+}
+#fuel{height:100%;width:70%;background:#3d6cff}
+
+/* AI */
+.ai-box{
+border-left:3px solid #3d6cff;
+}
+
+/* LOG */
+#log{font-size:12px;opacity:.8}
 
 /* FOOTER */
-footer {
-    text-align: center;
-    padding: 40px;
-    opacity: 0.6;
-    border-top: 1px solid rgba(255,255,255,0.08);
-}
-
-/* SCROLL ANIMATION */
-.hidden {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.9s ease;
-}
-
-.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-    .hero-text {
-        padding: 25px;
-    }
-
-    .hero-text h1 {
-        font-size: 2rem;
-    }
-
-    .section {
-        padding: 80px 20px;
-    }
+footer{
+text-align:center;
+padding:40px;
+opacity:.6;
 }
