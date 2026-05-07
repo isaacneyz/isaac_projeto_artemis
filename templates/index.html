@@ -7,9 +7,7 @@
     <title>Programa Artemis | NASA</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.min.js"></script>
@@ -35,10 +33,11 @@
 
 </header>
 
+<!-- HERO -->
 <section class="hero">
 
     <img class="hero-image"
-    src="https://images-assets.nasa.gov/image/KSC-20221116-PH-KLS01_0060/KSC-20221116-PH-KLS01_0060~large.jpg">
+    src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=1800&auto=format&fit=crop">
 
     <div class="hero-overlay"></div>
 
@@ -46,26 +45,25 @@
 
         <h1>Retorno à Lua</h1>
 
-        <p>
-            Programa Artemis da NASA — exploração lunar da nova geração.
-        </p>
+        <p>Programa Artemis — exploração espacial de nova geração</p>
 
     </div>
 
 </section>
 
+<!-- SOBRE -->
 <section id="sobre" class="section">
 
     <h2>Programa Artemis</h2>
 
     <p class="text">
-        O programa Artemis representa a nova era da exploração espacial.
-        O objetivo é estabelecer presença humana sustentável na Lua
-        e preparar futuras missões tripuladas para Marte.
+        O programa Artemis representa o retorno da humanidade à Lua com tecnologia avançada,
+        explorando novos sistemas de habitação e viagens interplanetárias.
     </p>
 
 </section>
 
+<!-- TRIPULAÇÃO -->
 <section id="tripulacao" class="section">
 
     <h2>Tripulação Artemis II</h2>
@@ -73,33 +71,34 @@
     <div class="grid">
 
         <div class="card astronauta">
-            <img src="https://www.nasa.gov/wp-content/uploads/2023/04/reid-wiseman.jpg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Reid_Wiseman_2014.jpg">
             <h3>Reid Wiseman</h3>
             <p>Comandante da missão Artemis II.</p>
         </div>
 
         <div class="card astronauta">
-            <img src="https://www.nasa.gov/wp-content/uploads/2023/04/victor-glover.jpg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Victor_Glover.jpg">
             <h3>Victor Glover</h3>
             <p>Piloto da missão e especialista orbital.</p>
         </div>
 
         <div class="card astronauta">
-            <img src="https://www.nasa.gov/wp-content/uploads/2023/04/christina-koch.jpg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Christina_Hammock_Koch.jpg">
             <h3>Christina Koch</h3>
-            <p>Astronauta responsável pelas pesquisas científicas.</p>
+            <p>Responsável por experimentos científicos.</p>
         </div>
 
         <div class="card astronauta">
-            <img src="https://www.nasa.gov/wp-content/uploads/2023/04/jeremy-hansen.jpg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Jeremy_Hansen.jpg">
             <h3>Jeremy Hansen</h3>
-            <p>Representante da Agência Espacial Canadense.</p>
+            <p>Agência Espacial Canadense.</p>
         </div>
 
     </div>
 
 </section>
 
+<!-- GALERIA -->
 <section id="galeria" class="section">
 
     <h2>Galeria Espacial</h2>
@@ -107,21 +106,22 @@
     <div class="gallery">
 
         <div class="gallery-item">
-            <img src="https://images-assets.nasa.gov/image/iss068e012341/iss068e012341~large.jpg">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop">
         </div>
 
         <div class="gallery-item">
-            <img src="https://images-assets.nasa.gov/image/KSC-20221027-PH-JBS01_0030/KSC-20221027-PH-JBS01_0030~large.jpg">
+            <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1600&auto=format&fit=crop">
         </div>
 
         <div class="gallery-item">
-            <img src="https://images-assets.nasa.gov/image/KSC-20221116-PH-KLS01_0060/KSC-20221116-PH-KLS01_0060~large.jpg">
+            <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=1600&auto=format&fit=crop">
         </div>
 
     </div>
 
 </section>
 
+<!-- DASHBOARD -->
 <section id="dashboard" class="section">
 
     <h2>Centro de Controle</h2>
@@ -188,45 +188,33 @@ const renderer = new THREE.WebGLRenderer({alpha:true});
 
 renderer.setSize(window.innerWidth,window.innerHeight);
 
-document.getElementById("space3d")
-.appendChild(renderer.domElement);
+document.getElementById("space3d").appendChild(renderer.domElement);
 
 const geometry = new THREE.BufferGeometry();
 
 let vertices = [];
 
 for(let i=0;i<3000;i++){
-
-vertices.push((Math.random()-0.5)*2000);
-vertices.push((Math.random()-0.5)*2000);
-vertices.push((Math.random()-0.5)*2000);
-
+    vertices.push((Math.random()-0.5)*2000);
+    vertices.push((Math.random()-0.5)*2000);
+    vertices.push((Math.random()-0.5)*2000);
 }
 
-geometry.setAttribute(
-'position',
-new THREE.Float32BufferAttribute(vertices,3)
+geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices,3));
+
+const stars = new THREE.Points(
+    geometry,
+    new THREE.PointsMaterial({color:0xffffff,size:1})
 );
-
-const material = new THREE.PointsMaterial({
-color:0xffffff,
-size:1
-});
-
-const stars = new THREE.Points(geometry,material);
 
 scene.add(stars);
 
 camera.position.z = 5;
 
 function animate(){
-
-requestAnimationFrame(animate);
-
-stars.rotation.y += 0.0003;
-
-renderer.render(scene,camera);
-
+    requestAnimationFrame(animate);
+    stars.rotation.y += 0.0003;
+    renderer.render(scene,camera);
 }
 
 animate();
