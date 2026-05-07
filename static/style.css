@@ -1,5 +1,3 @@
-/* RESET */
-
 *{
     margin:0;
     padding:0;
@@ -13,44 +11,31 @@ body{
     overflow-x:hidden;
 }
 
-/* FUNDO */
-
 #space3d{
     position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    z-index:-2;
+    inset:0;
+    z-index:-3;
 }
-
-#space{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    z-index:-1;
-}
-
-/* NAVBAR */
 
 .navbar{
     position:fixed;
     top:0;
     width:100%;
-    padding:20px 40px;
 
     display:flex;
     justify-content:space-between;
     align-items:center;
 
-    background:rgba(0,0,0,0.4);
+    padding:20px 40px;
+
+    background:rgba(0,0,0,.4);
+
     backdrop-filter:blur(10px);
 
-    border-bottom:1px solid rgba(255,255,255,0.1);
+    border-bottom:
+    1px solid rgba(255,255,255,.1);
 
-    z-index:1000;
+    z-index:999;
 }
 
 .logo{
@@ -63,40 +48,40 @@ body{
     width:40px;
 }
 
-.logo span{
-    font-size:18px;
-    font-weight:600;
-}
-
 nav a{
     color:white;
     text-decoration:none;
     margin-left:20px;
-    transition:0.3s;
 }
-
-nav a:hover{
-    color:#4da3ff;
-}
-
-/* HERO */
 
 .hero{
     height:100vh;
+    position:relative;
 
     display:flex;
     align-items:flex-end;
 
     padding:80px;
+}
 
-    position:relative;
+.hero-image{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:.45;
 }
 
 .hero-overlay{
     position:absolute;
     inset:0;
 
-    background:linear-gradient(
+    background:
+    linear-gradient(
         to top,
         #020611 10%,
         transparent
@@ -111,17 +96,13 @@ nav a:hover{
 }
 
 .hero-text h1{
-    font-size:4rem;
+    font-size:5rem;
     margin-bottom:20px;
 }
 
 .hero-text p{
-    font-size:1.1rem;
-    line-height:1.8;
-    opacity:0.85;
+    font-size:1.2rem;
 }
-
-/* SEÇÕES */
 
 .section{
     padding:120px 10%;
@@ -134,11 +115,8 @@ nav a:hover{
 
 .text{
     line-height:1.8;
-    opacity:0.85;
-    margin-bottom:20px;
+    opacity:.85;
 }
-
-/* GRID */
 
 .grid{
     display:grid;
@@ -149,47 +127,37 @@ nav a:hover{
     gap:25px;
 }
 
-/* CARDS */
-
 .card{
-    background:rgba(255,255,255,0.05);
+    background:
+    rgba(255,255,255,.05);
 
-    border:1px solid rgba(255,255,255,0.1);
-
-    backdrop-filter:blur(12px);
+    border:
+    1px solid rgba(255,255,255,.1);
 
     border-radius:20px;
 
-    padding:20px;
+    overflow:hidden;
 
-    transition:0.4s;
+    backdrop-filter:blur(10px);
+
+    transition:.4s;
 }
 
 .card:hover{
-    transform:translateY(-6px);
-
-    box-shadow:
-    0 0 25px rgba(61,108,255,0.3);
+    transform:translateY(-5px);
 }
 
-/* ASTRONAUTAS */
+.card h3,
+.card p{
+    padding:0 20px 20px;
+}
 
 .astronauta img{
     width:100%;
     height:320px;
 
     object-fit:cover;
-
-    border-radius:15px;
-
-    margin-bottom:15px;
 }
-
-.astronauta h3{
-    margin-bottom:10px;
-}
-
-/* GALERIA */
 
 .gallery{
     display:grid;
@@ -211,71 +179,24 @@ nav a:hover{
 
     object-fit:cover;
 
-    transition:0.5s;
+    transition:.5s;
 }
 
 .gallery-item:hover img{
     transform:scale(1.05);
 }
 
-/* DASHBOARD */
-
-.bar{
-    width:100%;
-    height:12px;
-
-    background:rgba(255,255,255,0.1);
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    margin-top:15px;
-}
-
-#fuel{
-    width:70%;
-    height:100%;
-
-    background:linear-gradient(
-        90deg,
-        #3d6cff,
-        #00d4ff
-    );
-}
-
-/* IA */
-
-.ai-box{
-    border-left:4px solid #3d6cff;
-}
-
-/* LOG */
-
-#log{
-    max-height:250px;
-    overflow-y:auto;
-
-    font-size:12px;
-    line-height:1.8;
-}
-
-/* FOOTER */
-
 footer{
     text-align:center;
     padding:40px;
-    opacity:0.6;
+    opacity:.6;
 }
-
-/* MOBILE */
 
 @media(max-width:768px){
 
     .navbar{
         flex-direction:column;
         gap:15px;
-        padding:20px;
     }
 
     .hero{
