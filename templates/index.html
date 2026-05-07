@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artemis Mission | NASA</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/artemis_logo.png') }}">
+        <span>Artemis Mission</span>
+    </div>
+
+    <nav>
+        <a href="#overview">Overview</a>
+        <a href="#objectives">Objectives</a>
+        <a href="#crew">Crew</a>
+        <a href="#timeline">Timeline</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-text">
+        <h1>Return to the Moon</h1>
+        <p>
+            Artemis is NASA’s next step in human space exploration.  
+            We are going further than ever before — to stay.
+        </p>
+    </div>
+</section>
+
+<!-- OVERVIEW -->
+<section id="overview" class="section">
+    <h2>Mission Overview</h2>
+
+    <p class="text">
+        The Artemis program aims to establish a sustainable human presence on the Moon by the end of the decade.  
+        Unlike the Apollo missions, Artemis is not just about landing — it is about building a long-term foundation for deep space exploration.
+    </p>
+
+    <p class="text">
+        Through advanced spacecraft, international collaboration, and new lunar technologies, NASA will prepare humanity for future missions to Mars.
+    </p>
+</section>
+
+<!-- OBJECTIVES -->
+<section id="objectives" class="section">
+    <h2>Core Objectives</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Lunar Sustainability</h3>
+            <p>Develop systems to maintain human life on the Moon for extended periods.</p>
+        </div>
+
+        <div class="card">
+            <h3>Gateway Station</h3>
+            <p>Build a lunar orbital outpost to support missions deeper into space.</p>
+        </div>
+
+        <div class="card">
+            <h3>Mars Preparation</h3>
+            <p>Test technologies and systems required for future Mars exploration.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CREW -->
+<section id="crew" class="section">
+    <h2>Artemis II Crew</h2>
+
+    <p class="text">
+        Artemis II will be the first crewed mission of the program, sending astronauts around the Moon in preparation for future landings.
+    </p>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Reid Wiseman</h3>
+            <p>Commander of the mission.</p>
+        </div>
+
+        <div class="card">
+            <h3>Victor Glover</h3>
+            <p>Pilot and systems specialist.</p>
+        </div>
+
+        <div class="card">
+            <h3>Christina Koch</h3>
+            <p>Mission specialist and research lead.</p>
+        </div>
+
+        <div class="card">
+            <h3>Jeremy Hansen</h3>
+            <p>Canadian Space Agency astronaut.</p>
+        </div>
+    </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline" class="section">
+    <h2>Mission Timeline</h2>
+
+    <div class="card">
+        <p><strong>2022</strong> — Artemis I: Uncrewed lunar orbit test</p>
+        <p><strong>2026</strong> — Artemis II: First crewed lunar flyby</p>
+        <p><strong>2027+</strong> — Artemis III: Lunar surface return</p>
+    </div>
+</section>
+
+<footer>
+    NASA Artemis Program — Exploring the Future of Humanity Beyond Earth
+</footer>
+
+<script>
+const items = document.querySelectorAll(".section, .card, .text");
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+items.forEach(el => {
+    el.classList.add("hidden");
+    observer.observe(el);
+});
+</script>
+
+</body>
+</html>
